@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "hsm.hotshirtlessmen.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+    "ClientPlayerInteractionManagerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "ClientPlayerInteractionManagerMixin",
+    "HeldItemRendererMixin"
+  ]
+}

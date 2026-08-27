@@ -1,0 +1,21 @@
+[versions]
+
+loom = "1.17.20"
+
+fabric-loader = "0.19.3"
+
+fabric-api-26-1 = "0.155.2+26.1.2"
+fabric-api-26-2 = "0.158.0+26.2"
+fabric-api-26-3 = "0.158.2+26.3"
+
+[libraries]
+
+fabric-loader = { module = "net.fabricmc:fabric-loader", version.ref = "fabric-loader" }
+
+fabric-api-26-1 = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api-26-1" }
+fabric-api-26-2 = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api-26-2" }
+fabric-api-26-3 = { module = "net.fabricmc.fabric-api:fabric-api", version.ref = "fabric-api-26-3" }
+
+[plugins]
+
+loom = { id = "net.fabricmc.fabric-loom", version = "1.17.20" }
