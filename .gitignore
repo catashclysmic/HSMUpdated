@@ -1,0 +1,77 @@
+# greidl
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+*.launch
+.settings/
+.classpath
+.project
+
+# intellij
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vsc
+.vscode/
+bin/
+
+# macos
+.DS_Store
+*.DS_Store
+
+# mc
+run/
+
+# java
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# logs
+*.log
+*.logs
+log/
+logs/
+
+# debug
+*-debug.*
+*-debug/
+debug/
+debug-output/
+debug-logs/
+*.debug
+*.trace
+
+# crash dump files
+*.dump
+*.dmp
+*.crash
+crash-reports/
+crash-dumps/
+crashes/
+
+# temp
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+tmp/
+temp/
+
+# cache
+.cache/
+cache/
+*.cache
+
+# local config
+.env
+.env.*
+!.env.example
+*.local

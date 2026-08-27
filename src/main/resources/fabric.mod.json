@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "hotshirtlessmen",
+	"version": "${version}",
+	"name": "HSM",
+	"description": "Fixes item resets where it shouldn't have been one.",
+	"authors": [
+		"Rekteiru",
+        "Lumi"
+	],
+	"license": "MIT",
+	"icon": "assets/hotshirtlessmen/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"hsm.hotshirtlessmen.HSM"
+		]
+	},
+	"mixins": [
+		"hotshirtlessmen.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "${minecraft}",
+		"java": ">=25"
+	},
+	"suggests": {
+	}
+}

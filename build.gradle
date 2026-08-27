@@ -1,0 +1,69 @@
+plugins {
+    alias(libs.plugins.loom)
+    id 'maven-publish'
+}
+
+def modId = project.property('mod.id')
+def modName = project.property('mod.name')
+def modVersion = project.property('mod.version')
+def modGroup = project.property('mod.group')
+
+group = modGroup
+version = "${modVersion}+${minecraft_version}"
+
+base {
+    archivesName = modId
+}
+
+repositories {
+    mavenCentral()
+
+    maven {
+        url = 'https://maven.fabricmc.net/'
+    }
+
+    maven {
+        url = 'https://api.modrinth.com/maven'
+    }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${minecraft_version}"
+    implementation "net.fabricmc:fabric-loader:${loader_version}"
+    implementation "net.fabricmc.fabric-api:fabric-api:${fabric_api_version}"
+}
+
+processResources {
+    inputs.property 'version', version
+    inputs.property 'id', modId
+    inputs.property 'name', modName
+    inputs.property 'minecraft', minecraft_version
+
+    filesMatching('fabric.mod.json') {
+        expand(
+                version: version,
+                id: modId,
+                name: modName,
+                minecraft: minecraft_version
+        )
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 25
+    options.encoding = 'UTF-8'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+
+    withSourcesJar()
+}
+
+jar {
+    from('LICENSE') {
+        rename { "${it}_${modId}" }
+    }
+}
